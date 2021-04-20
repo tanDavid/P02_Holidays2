@@ -37,9 +37,13 @@ public class HolidayAdapter extends ArrayAdapter<Holiday> {
 
         if (currModule.getHolidayName() == "Labour Day")
             ivHolidayImage.setImageResource(R.drawable.labourday);
-        else
+        else if (currModule.getHolidayName() == "New Year's Day")
             ivHolidayImage.setImageResource(R.drawable.newyear);
-
+        else if (currModule.getHolidayName() == "Chinese New Year")
+            ivHolidayImage.setImageResource(R.drawable.cny);
+        else{
+            ivHolidayImage.setImageResource(R.drawable.goodfriday);
+        }
         return rowView;
     }
 }

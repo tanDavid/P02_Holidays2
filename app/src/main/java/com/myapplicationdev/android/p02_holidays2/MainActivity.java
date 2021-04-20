@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         al = new ArrayList<String>();
         al.add("Secular");
+        al.add("Ethnic & Religion");
         aa = new TypeAdapter(this, R.layout.row, al);
         lv.setAdapter(aa);
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 String selectedType = al.get(position);
+
 
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 //based on item add info to intent

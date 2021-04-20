@@ -31,8 +31,16 @@ public class SecondActivity extends AppCompatActivity {
         tvType.setText(message);
 
         al = new ArrayList<Holiday>();
-        al.add(new Holiday("New Year's Day", "newyear", "1 January 2017"));
-        al.add(new Holiday("Labour Day", "labourday", "1 May 2017"));
+        if(message.equals("Secular")){
+
+            al.add(new Holiday("New Year's Day", "newyear", "1 January 2017"));
+            al.add(new Holiday("Labour Day", "labourday", "1 May 2017"));
+
+        }else{
+            al.add(new Holiday("Chinese New Year", "cny", "28-29 January 2017"));
+            al.add(new Holiday("Good Friday", "goodfriday", "14 April 2017"));
+        }
+
         aa = new HolidayAdapter(this, R.layout.row2, al);
         lv.setAdapter(aa);
 
@@ -41,7 +49,7 @@ public class SecondActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Holiday selectedHoliday = al.get(position);
                 Toast.makeText(SecondActivity.this, selectedHoliday.getHolidayName()
-                        + " Date: " + selectedHoliday.getHolidayDate(), Toast.LENGTH_LONG).show();
+                        + " Date: " + selectedHoliday.getHolidayDate(), Toast.LENGTH_SHORT).show();
             }
         });
     }
